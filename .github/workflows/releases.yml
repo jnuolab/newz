@@ -1,7 +1,9 @@
 name: Release Draft
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 env:
   FLUTTER_VERSION: "3.13.9"
