@@ -1,6 +1,10 @@
 name: Deploy Countries Pad
-'on':
-  workflow_dispatch: null
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build:
     name: Job 1 - Build Signed AAB
