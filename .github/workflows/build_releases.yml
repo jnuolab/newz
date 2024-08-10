@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check my Repo code
         uses: actions/checkout@v3
@@ -29,7 +31,7 @@ jobs:
           flutter build apk --release -- split-per-abi
 
       - name: push to release
-        uses: ncipollo/release-actions@v1
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/debug/*"
           tag: v0.0.0+1
