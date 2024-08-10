@@ -64,7 +64,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
 
       - name: Dependencies
-        working-directory: ${{ env.APK_BUILD_DIR }}/app
+        # working-directory: ${{ env.APK_BUILD_DIR }}/app
         run: flutter pub get
 
       - name: Build APK
