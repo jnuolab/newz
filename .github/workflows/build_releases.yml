@@ -28,7 +28,7 @@ jobs:
       - name: Flutter Run & Build
         run: |
           flutter pub get
-          flutter build apk --release -- split-per-abi
+          flutter build apk --release --split-per-abi
 
       - name: push to release
         uses: ncipollo/release-action@v1
@@ -36,3 +36,4 @@ jobs:
           artifacts: "build/app/outputs/apk/debug/*"
           tag: v0.0.0+1
           token: ${{ secrets.TOKEN }}
+        working-directory: android
