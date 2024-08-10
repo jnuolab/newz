@@ -1,0 +1,22 @@
+name: Release Draft
+
+on:
+  workflow_dispatch:
+
+env:
+  FLUTTER_VERSION: "3.13.9"
+  APK_BUILD_DIR: "/tmp/build"
+
+jobs:
+  build:
+  runs-on:
+    version: $${{ steps.get_version.outputs.version }}
+
+    steps:
+      - uses: action/checkout@v4
+
+      - name: Get version from pubspec.yaml
+        id: get_version
+        run: |
+          VERSION=$(sed -n 's/^version: \([0-9]*\.[0-9]*\.[0-9]*\).*/\1/p' app/pubspec.yaml)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
