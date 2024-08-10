@@ -20,9 +20,12 @@ jobs:
         with:
           distribution: temurin
           java-version: 20
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 8.5
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-        working_directory: android/
       - name: Setup Gradle Cache
         uses: gradle/gradle-build-action@v2
         with:
