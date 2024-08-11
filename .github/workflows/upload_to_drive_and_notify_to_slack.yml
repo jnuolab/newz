@@ -55,7 +55,7 @@ jobs:
         uses: rtcamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: ${{ steps.branch.outputs.branch }}
-          SLACK_COLOR: ${{ jobs.status }}
+          SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: 
           SLACK_MESSAGE: 
           SLACK_TITLE: 
