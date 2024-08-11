@@ -60,4 +60,4 @@ jobs:
           SLACK_MESSAGE: 
           SLACK_TITLE: 
           SLACK_USERNAME: myUserName 
-          SLACK_USERNAME: ${{ steps.slackwebhook.outputs.value }} 
+          SLACK_WEBHOOK: ${{ steps.slackwebhook.outputs.value }} 
