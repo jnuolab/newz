@@ -36,7 +36,7 @@ jobs:
           sudo apt-get install zip
           zip -r archive.zip *
       - name: Upload apk to Google Drive
-        uses: adityak74/googel-drive-upload-git-action@main
+        uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.CREDENTIALS }}
           filename: "build/app/outputs/apk/release/app-release.apk"
@@ -45,7 +45,7 @@ jobs:
           overwrite: "true"
           mimType: "application/vnd.android.package-archive"
       - name: Get SlackWebHook
-        uses: haya14busa/action@v1
+        uses: haya14busa/action-cond@v1
         id: slackwebhook
         with:
           cond: ${{ steps.branch.outputs.branch == 'master' }}
